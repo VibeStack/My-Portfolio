@@ -63,7 +63,7 @@ export default function About({ onClose }) {
                       </p>
                       <img
                         className="relative"
-                        src="../src/assets/img/mongoDB.svg"
+                        src="/img/mongoDB.svg"
                         alt=""
                       />
                     </div>
@@ -78,7 +78,7 @@ export default function About({ onClose }) {
                       </p>
                       <img
                         className="relative"
-                        src="../src/assets/img/express.svg"
+                        src="/img/express.svg"
                         alt=""
                       />
                     </div>
@@ -93,7 +93,7 @@ export default function About({ onClose }) {
                       </p>
                       <img
                         className="relative"
-                        src="../src/assets/img/react.svg"
+                        src="/img/react.svg"
                         alt=""
                       />
                     </div>
@@ -108,7 +108,7 @@ export default function About({ onClose }) {
                       </p>
                       <img
                         className="relative"
-                        src="../src/assets/img/node.svg"
+                        src="/img/node.svg"
                         alt=""
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function About({ onClose }) {
               </div>
             </div>
             <div>
-              <img className="hidden sm:block sm:w-[250px] md:w-2xl lg:w-7xl rounded-2xl" src="../src/assets/img/aboutImg.jpg" alt="" />
+              <img className="hidden sm:block sm:w-[250px] md:w-2xl lg:w-7xl rounded-2xl" src="/img/aboutImg.jpg" alt="" />
             </div>
           </div>
           <button className="fixed top-5 right-5 p-2 border-2 border-white rounded-full transition-transform duration-500 hover:rotate-z-180 z-10"
