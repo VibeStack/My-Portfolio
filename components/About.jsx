@@ -58,7 +58,7 @@ export default function About({ onClose }) {
                 <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-10 pb-5 ">
                   <span className="flex flex-col justify-center items-center p-1">
                     <div className="relative flex items-center justify-center flex-col group">
-                      <p className="after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:content-[''] after:w-4 after:h-4 after:bg-inherit after:-z-1 absolute -top-12 opacity-0 bg-[#49a149] px-2 py-1 rounded text-black group-hover:opacity-100">
+                      <p className="after:content-[''] after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 absolute -top-12 opacity-0 bg-[#49a149] px-4 py-2 rounded text-black group-hover:opacity-100 group-hover:rotate-y-360 transition-all ease-in-out duration-200">
                         MongoDB
                       </p>
                       <img
@@ -73,7 +73,7 @@ export default function About({ onClose }) {
                   </span>
                   <span className="flex flex-col justify-center items-center p-1">
                     <div className="relative flex items-center justify-center flex-col group">
-                      <p className="after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:content-[''] after:w-4 after:h-4 after:bg-inherit after:-z-1 absolute -top-12 opacity-0 bg-[#FFF] px-2 py-1 rounded text-black group-hover:opacity-100">
+                      <p className="after:content-[''] after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 absolute -top-12 opacity-0 bg-[#fff] px-4 py-2 rounded text-black group-hover:opacity-100 group-hover:rotate-y-360 transition-all ease-in-out duration-200">
                         Express.JS
                       </p>
                       <img
@@ -88,7 +88,7 @@ export default function About({ onClose }) {
                   </span>
                   <span className="flex flex-col justify-center items-center p-1">
                     <div className="relative flex items-center justify-center flex-col group">
-                      <p className="after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:content-[''] after:w-4 after:h-4 after:bg-inherit after:-z-1 absolute -top-12 opacity-0 bg-[#64dcf5] px-2 py-1 rounded text-black group-hover:opacity-100">
+                      <p className="after:content-[''] after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 absolute -top-12 opacity-0 bg-[#64dcf5] px-4 py-2 rounded text-black group-hover:opacity-100 group-hover:rotate-y-360 transition-all ease-in-out duration-200">
                         React.JS
                       </p>
                       <img
@@ -103,7 +103,7 @@ export default function About({ onClose }) {
                   </span>
                   <span className="flex flex-col justify-center items-center p-1">
                     <div className="relative flex items-center justify-center flex-col group">
-                      <p className="after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:content-[''] after:w-4 after:h-4 after:bg-inherit after:-z-1 absolute -top-12 opacity-0 bg-[#8dc154] px-2 py-1 rounded text-black group-hover:opacity-100">
+                      <p className="after:content-[''] after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 absolute -top-12 opacity-0 bg-[#8dc154] px-4 py-2 rounded text-black group-hover:opacity-100 group-hover:rotate-y-360 transition-all ease-in-out duration-200">
                         Node.JS
                       </p>
                       <img
