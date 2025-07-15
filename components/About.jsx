@@ -55,8 +55,7 @@ export default function About({ onClose }) {
               </div>
               <div className="m-2 md:m-4">
                 <h2 className="p-2 md:p-4 text-4xl lg:text-5xl text-purple-500">MERN Stack</h2>
-                <div className="flex wrap-normal justify-center gap-5 md:gap-10 lg:gap-20 pt-12">
-
+                <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-10 pb-5 ">
                   <span className="flex flex-col justify-center items-center p-1">
                     <div className="relative flex items-center justify-center flex-col group">
                       <p className="after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:content-[''] after:w-4 after:h-4 after:bg-inherit after:-z-1 absolute -top-12 opacity-0 bg-[#49a149] px-2 py-1 rounded text-black group-hover:opacity-100">
