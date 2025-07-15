@@ -54,7 +54,7 @@ export default function About({ onClose }) {
                 })}
               </div>
               <div className="m-2 md:m-4">
-                <h2 className="p-2 md:p-4 text-4xl lg:text-5xl text-purple-500">MERN Stack</h2>
+                <h2 className="p-4 text-4xl lg:text-5xl text-purple-500">MERN Stack</h2>
                 <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-10 pb-5 ">
                   <span className="flex flex-col justify-center items-center p-1">
                     <div className="relative flex items-center justify-center flex-col group">
