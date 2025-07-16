@@ -8,12 +8,10 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #444;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.swiper-button-next{
-  color: #6d0083;
+.my-swiper-section {
+  --swiper-theme-color: #5a189a;
 }
