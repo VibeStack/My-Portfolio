@@ -56,24 +56,24 @@ export default function About({ onClose }) {
 
   return (
     <>
-      <div className="fixed inset-10 bg-transparent z-50 flex justify-center items-center">
+      <div className="fixed inset-0 m-auto bg-transparent z-50 flex justify-center items-center max-w-[1024px]">
         <div
-          className={`bg-[#191919] flex flex-col lg:flex-row justify-evenly items-center absolute w-full p-5 md:p-10 border-2 border-white rounded-xl transition-all duration-700 ease-in-out transform ${
+          className={`bg-[#191919] flex flex-col lg:flex-row justify-center items-center absolute  p-[24px] m-[24px] box-border border-2 border-white rounded-xl transition-all duration-700 ease-in-out transform ${
             show ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
           <div className="bg-[#191919] flex flex-col md:flex-row justify-center items-center">
             <div>
-              <div className="m-1 md:m-4">
-                <h2 className="p-4 text-4xl lg:text-5xl text-purple-500">
+              <div className="m-1 mb-2">
+                <h2 className="p-2 text-[24px] lg:text-[36px] text-purple-500">
                   About Me
                 </h2>
-                <p className="leading-relaxed	text-[10px] sm:text-[12px] lg:text-[16px] px-4 font-sans mb-2">
+                <p className="leading-relaxed	text-[10px] sm:text-[12px] px-4 font-sans mb-2">
                   A Tech Enthusiast, who loves to help, explore, and dive deep
                   into concepts. I'm passionate about building meaningful tech
                   solutions and continuously expanding my knowledge.
                 </p>
-                <p className="leading-relaxed	text-[10px] sm:text-[12px] lg:text-[16px] px-4 font-sans mb-2">
+                <p className="leading-relaxed	text-[10px] sm:text-[12px] px-4 font-sans mb-2">
                   Technologies and tools I use to craft modern, responsive, and
                   high-performance web applications.
                 </p>
@@ -89,10 +89,10 @@ export default function About({ onClose }) {
                 })}
               </div>
               <div className="m-1 md:m-4">
-                <h2 className="p-4 text-4xl lg:text-5xl text-purple-500">
+                <h2 className="p-2 text-[24px] lg:text-[36px] text-purple-500">
                   MERN Stack
                 </h2>
-                <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-2 sm:pt-10 pb-5 ">
+                <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-2 sm:pt-5 pb-2 ">
                   {
                     aboutToolTips.map(({tech,img,symbol,textColor},i)=>{
                       return (<SingleToolTips key={i} tech={tech} img={img} symbol={symbol} textColor={textColor} />)
@@ -103,7 +103,7 @@ export default function About({ onClose }) {
             </div>
             <div>
               <img
-                className="hidden sm:block sm:max-w-[250px] md:max-w-[350px] lg:max-w-[500px] rounded-2xl"
+                className="hidden sm:block sm:max-w-[200px] md:max-w-[250px] lg:max-w-[400px] rounded-2xl"
                 src="/img/aboutImg.jpg"
                 alt=""
               />
