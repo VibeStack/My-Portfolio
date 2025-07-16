@@ -103,7 +103,7 @@ export default function About({ onClose }) {
             </div>
             <div>
               <img
-                className="hidden sm:block sm:w-[250px] md:w-2xl lg:w-7xl rounded-2xl"
+                className="hidden sm:block sm:max-w-[250px] md:max-w-[350px] lg:max-w-[500px] rounded-2xl"
                 src="/img/aboutImg.jpg"
                 alt=""
               />

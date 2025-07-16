@@ -11,12 +11,12 @@ export default function SingleProject({
 }) {
   return (
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-[80px] items-center relative my-25">
-      <div
-        className={`h-[1px] ${
+      <div className={`h-[1px] ${
           imgPosition === "left" ? "left-1/4 right-1/2" : "left-1/2 right-1/4"
         } bg-[#ced4da] absolute top-1/2 hidden sm:block`}
       />
-      <div className="w-4 h-4 rounded-full border-[3px] border-[#ced4da] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block" />
+      <a href={websiteLink} className="w-4 h-4 rounded-full border-[3px] border-[#ced4da] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
+      </a>
 
       <div className="order-2 sm:order-1 w-full pt-5">
         <h3 className="text-[#ced4da] font-bold text-2xl md:text-4xl">

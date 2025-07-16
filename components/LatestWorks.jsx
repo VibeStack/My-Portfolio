@@ -58,7 +58,7 @@ export default function LatestWorks() {
       <section ref={scrollRef}
         className="pt-10 max-w-screen mx-auto px-10 md:px-15 lg:px-40 relative pb-8 sm:pb-16 bg-[#111] text-white"
       >
-        <h2 className="text-4xl sm:text-6xl relative z-100 font-extrabold px-4 py-2 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] font-['Nunito'] opacity-75 transition-all hover:opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out">
+        <h2 className="text-4xl sm:text-6xl relative z-10 font-extrabold px-4 py-2 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] font-['Nunito'] opacity-75 transition-all hover:opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out">
           Latest Works
         </h2>
 
@@ -81,9 +81,6 @@ export default function LatestWorks() {
             );
           })}
         <div className="w-[1px] hidden sm:block bg-[#ced4da] absolute top-30 bottom-0 left-1/2 -translate-x-1/2 " />
-      </section>
-      <section className="max-w-screen mx-auto px-10 bg-[#111] text-center">
-        <h2 className="text-4xl sm:text-6xl relative z-10 font-extrabold px-4 py-2  mx-auto inline-block text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] p-6 font-['Nunito'] opacity-75 transition-all hover:opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out">What Experts Say About My Work</h2>
       </section>
     </>
   );
