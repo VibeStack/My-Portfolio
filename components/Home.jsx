@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useEffect, useRef } from "react";
 import About from "./About";
 import { useScroll } from "../hooks/useScroll";
-import { runMatter } from "./matter";
-
+import { runMatter } from "../matter";
 
 export default function Home() {
   const { scrollToLatestWorks } = useScroll();  
