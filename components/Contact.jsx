@@ -3,7 +3,7 @@ import React from "react";
 export default function Contact() {
   return (
     <section className="max-w-screen mx-auto px-10 bg-[#111] text-center py-10">
-      <h2 className="text-4xl sm:text-6xl relative z-10 font-extrabold px-4 py-2  mx-auto inline-block text-center text-[#5a189a] sm:border-b-2 sm:border-[rgb(157,78,221)] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] p-6 font-['Nunito'] transition-all opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out">
+      <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 mx-auto inline-block text-center text-[#5a189a] sm:border-b-2 sm:border-[rgb(157,78,221)] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] p-6 font-['Nunito'] transition-all opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out">
         Let's Connect
       </h2>
       <div className="mt-[50px]">

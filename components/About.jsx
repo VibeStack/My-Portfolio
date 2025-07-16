@@ -89,10 +89,10 @@ export default function About({ onClose }) {
                 })}
               </div>
               <div className="m-1 md:m-4">
-                <h2 className="p-2 text-[24px] lg:text-[36px] text-purple-500">
+                <h2 className="text-[24px] lg:text-[36px] text-purple-500">
                   MERN Stack
                 </h2>
-                <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-2 sm:pt-5 pb-2 ">
+                <div className="flex wrap-normal justify-center gap-5 sm:gap-12 lg:gap-15 pt-2 sm:pt-5 pb-2">
                   {
                     aboutToolTips.map(({tech,img,symbol,textColor},i)=>{
                       return (<SingleToolTips key={i} tech={tech} img={img} symbol={symbol} textColor={textColor} />)
