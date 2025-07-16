@@ -18,7 +18,7 @@ export default function SingleProject({
       />
       <div className="w-4 h-4 rounded-full border-[3px] border-[#ced4da] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block" />
 
-      <div className="order-2 sm:order-1 w-full">
+      <div className="order-2 sm:order-1 w-full pt-5">
         <h3 className="text-[#ced4da] font-bold text-2xl md:text-4xl">
           {websiteName}
         </h3>
@@ -42,16 +42,16 @@ export default function SingleProject({
       <a
         href={websiteLink}
         className={`${
-          imgPosition === "right" ? "order-1 sm:order-2" : ""
-        }flex w-full relative justify-center sm:justify-start`}
+          imgPosition === "right" ? "order-1 sm:order-2" : "order-1"
+        }flex w-full relative justify-center sm:justify-start items-center`}
       >
         <div className="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200">
           <img
-            className="max-w-[400px] w-full m-auto relative z-10 drop-shadow-[0_0_100px_rgba(255,255,255,0.6)]"
+            className="max-w-[400px] w-full pl-auto relative z-10 drop-shadow-[0_0_100px_rgba(255,255,255,0.6)]"
             src={websiteImg}
             alt=""
           />
-          <span className="flex group-hover:-top-14 ease-jump duration-200 bg-[#ced4da] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:-z-1 text-[#111] sm:text-[12px] md:text-[16px]">
+          <span className="flex group-hover:-top-14 ease-jump duration-200 bg-[#ced4da] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:-z-1 text-[#111] sm:text-[12px] md:text-[16px] ">
             {websiteName}
             <svg
               xmlns="http://www.w3.org/2000/svg"
