@@ -8,9 +8,9 @@ export default function SingleReview({
   clientPosition,
 }) {
   return (
-    <div className="inset-0 flex flex-col md:flex-row max-w-[800px] items-center justify-center p-9 mx-15 my-[100px] lg:mx-auto shadow-[0_0_20px_rgba(224,170,255,1)] rounded-3xl bg-[#222222]">
+    <div className="inset-0 flex flex-col md:flex-row max-w-[768px] items-center justify-center p-9 mx-5 my-[100px] md:mx-auto shadow-[0_0_20px_rgba(224,170,255,1)] rounded-3xl bg-[#222222]">
       <img
-        className="shrink-0 w-[180px] h-[180px] rounded-full drop-shadow-[0_0_20px_rgba(224,170,255,1)] mt-3" 
+        className="shrink-0 w-[100px] h-[100px] md:w-[180px] md:h-[180px] rounded-full drop-shadow-[0_0_20px_rgba(224,170,255,1)] mt-3" 
         src={clientImg}
         alt=""
       />

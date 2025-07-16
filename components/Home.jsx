@@ -39,7 +39,7 @@ export default function Home() {
             </svg>
           </a>
           <div className="flex gap-4">
-            <a className="pointer-events-auto" href="#">
+            {/* <a className="pointer-events-auto" href="#">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
@@ -62,9 +62,9 @@ export default function Home() {
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
-            </a>
+            </a> */}
 
-            <a className="pointer-events-auto" href="">
+            {/* <a className="pointer-events-auto" href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
@@ -79,7 +79,7 @@ export default function Home() {
               >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
-            </a>
+            </a> */}
 
             <a className="pointer-events-auto" href="tel:8544953527">
               <svg

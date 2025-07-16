@@ -98,7 +98,7 @@ export function runMatter(canvasElement) {
       },
     });
 
-    const circle1 = Bodies.circle(x, y, Common.random(2, 8), {
+    const circle1 = Bodies.circle(x, y, Common.random(2, 10), {
       mass: 0.1,
       friction: 0,
       frictionAir: 0.01,

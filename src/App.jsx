@@ -3,6 +3,8 @@ import "./App.css";
 import LatestWorks from "../components/LatestWorks";
 import { ScrollProvider } from "../context/scrollProvider";
 import ExpertsView from "../components/ExpertsView";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Home />
       <LatestWorks />
       <ExpertsView />
+      <Contact />
+      <Footer />
     </ScrollProvider>
   );
 }

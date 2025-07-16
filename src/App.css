@@ -15,3 +15,6 @@
 .my-swiper-section {
   --swiper-theme-color: #5a189a;
 }
+.swiper-pagination-bullet.swiper-pagination-bullet{
+  background-color: #bc85f3;
+}
