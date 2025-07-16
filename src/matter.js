@@ -28,7 +28,7 @@ export function runMatter(canvasElement) {
     height: window.innerHeight,
   };
 
-  // ✅ Clear existing children (like extra canvas) to prevent duplicates
+  //  Clear existing children (like extra canvas) to prevent duplicates
   while (canvasElement.firstChild) {
     canvasElement.removeChild(canvasElement.firstChild);
   }

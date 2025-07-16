@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { useEffect, useRef } from "react";
 import { runMatter } from "../src/matter";
 import About from "./About";
+import { useScroll } from "../hooks/useScroll";
+
 
 export default function Home() {
+  const { scrollToLatestWorks } = useScroll();  
+
   const [showAboutPopup, setShowAboutPopup] = useState(false);
   const wrapperRef = useRef(null);
   useEffect(() => {
@@ -15,7 +19,6 @@ export default function Home() {
   return (
     <div className="home-page bg-[#111] text-white font-['Nunito']">
       <section className="h-screen flex flex-col justify-between">
-
         <header
           className={`pointer-events-none z-10 flex items-center justify-between px-4 mt-4 max-w-screen-xl mx-auto w-full ${
             showAboutPopup ? "opacity-0" : ""
@@ -286,8 +289,15 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className={`relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:left-1/2 after:-translate-x-1/2 after:bg-[#444] after:top-[100px] ${showAboutPopup ? "opacity-0" : ""}`}>
-          <button className="flex items-center relative bg-[#C084FC] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#9d4edd] to-[#5a189a] hover:scale-110 hover:from-[#7b2cbf] hover:to-[#3c096c] transition-all duration-500 group mb-20 ">
+        <div
+          className={`relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:left-1/2 after:-translate-x-1/2 after:bg-[#444] after:top-[100px] ${
+            showAboutPopup ? "opacity-0" : ""
+          }`}
+        >
+          <button
+            onClick={scrollToLatestWorks}
+            className="flex items-center relative bg-[#C084FC] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#9d4edd] to-[#5a189a] hover:scale-110 hover:from-[#7b2cbf] hover:to-[#3c096c] transition-all duration-500 group mb-20 "
+          >
             Latest Works
             <svg
               xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -329,7 +339,6 @@ export default function Home() {
             </svg>
           </button>
         </div>
-        
       </section>
     </div>
   );
