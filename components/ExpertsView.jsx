@@ -10,26 +10,26 @@ import "swiper/css/pagination";
 export default function ExpertsView() {
   const clientReviewData = [
     {
-      clientName: "Saatvik Nagpal",
-      clientPosition: "Founder, EazyGrad",
+      clientName: "Arsh",
+      clientPosition: "Founder, RadioactiveHub",
       clientImg: "/img/lion.png",
       clientReview:
-        "Anurag is a talented, committed individual who will leave no stone unturned in his pursuit to provide with the best. His attention to detail and in-depth experience in the of web development is indeed commendable. He has exhibited exemplary skills in the field, and I hope to see all the great projects coming up!",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus provident fuga hic mollitia assumenda qui adipisci, officia, soluta error accusantium velit illum facere corporis facilis ipsam pariatur quis nam nihil? Illo fugit sed ducimus nostrum ut officia animi porro beatae quibusdam perspiciatis! Dolore minima nisi atque, velit sit porro.",
     },
     {
-      clientName: "Saatvik Nagpal",
-      clientPosition: "Founder, EazyGrad",
+      clientName: "Arsh",
+      clientPosition: "Founder, RadioactiveHub",
       clientImg: "/img/lion.png",
       clientReview:
-        "Anurag is a talented, committed individual who will leave no stone unturned in his pursuit to provide with the best. His attention to detail and in-depth experience in the of web development is indeed commendable. He has exhibited exemplary skills in the field, and I hope to see all the great projects coming up!",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus provident fuga hic mollitia assumenda qui adipisci, officia, soluta error accusantium velit illum facere corporis facilis ipsam pariatur quis nam nihil? Illo fugit sed ducimus nostrum ut officia animi porro beatae quibusdam perspiciatis! Dolore minima nisi atque, velit sit porro.",
     },
     {
-      clientName: "Saatvik Nagpal",
-      clientPosition: "Founder, EazyGrad",
+      clientName: "Arsh",
+      clientPosition: "Founder, RadioactiveHub",
       clientImg: "/img/lion.png",
       clientReview:
-        "Anurag is a talented, committed individual who will leave no stone unturned in his pursuit to provide with the best. His attention to detail and in-depth experience in the of web development is indeed commendable. He has exhibited exemplary skills in the field, and I hope to see all the great projects coming up!",
-    },
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus provident fuga hic mollitia assumenda qui adipisci, officia, soluta error accusantium velit illum facere corporis facilis ipsam pariatur quis nam nihil? Illo fugit sed ducimus nostrum ut officia animi porro beatae quibusdam perspiciatis! Dolore minima nisi atque, velit sit porro.",
+    }
   ];
   return (
     <>
