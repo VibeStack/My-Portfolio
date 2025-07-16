@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useEffect, useRef } from "react";
-import { runMatter } from "../src/matter";
 import About from "./About";
 import { useScroll } from "../hooks/useScroll";
+import { runMatter } from "./matter";
 
 
 export default function Home() {

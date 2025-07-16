@@ -101,7 +101,7 @@ export function runMatter(canvasElement) {
     const circle1 = Bodies.circle(x, y, Common.random(2, 8), {
       mass: 0.1,
       friction: 0,
-      frictionAir: 0.01,
+      frictionAir: 0.1,
       render: {
         fillStyle: r > 0.3 ? '#27292d' : '#444444',
         strokeStyle: '#000000',
@@ -112,7 +112,7 @@ export function runMatter(canvasElement) {
     const circle2 = Bodies.circle(x, y, Common.random(2, 20), {
       mass: 0.5,
       friction: 0,
-      frictionAir: 0,
+      frictionAir: 0.01,
       render: {
         fillStyle: r > 0.3 ? '#edf2fb44' : '#222222',
         strokeStyle: '#111111',
@@ -123,7 +123,7 @@ export function runMatter(canvasElement) {
     const circle3 = Bodies.circle(x, y, Common.random(2, 30), {
       mass: 0.75,
       friction: 0.6,
-      frictionAir: 0.8,
+      frictionAir: 0.001,
       render: {
         fillStyle: '#191919',
         strokeStyle: '#111111',
