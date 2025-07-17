@@ -1,14 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [userDetails, setUserDetails] = useState({
+    userName: "",
+    userEmail: "",
+    userMessage: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const validateForm = (formData) => {
+    const errorsData = {};
+
+    if (!formData.userName) {
+      errorsData.nameError = "Enter User's Name!";
+    }
+    if (!formData.userEmail) {
+      errorsData.emailError = "Enter User's Email!";
+    }
+    if (!formData.userMessage) {
+      errorsData.messageError = "Enter Your Message!";
+    }
+    setErrors(errorsData);
+    return errorsData;
+  };
+
+  const handleForm = (e) => {
+    e.preventDefault();
+
+    const validateResult = validateForm(userDetails);
+    if (Object.keys(validateResult).length) return;
+
+    console.log(userDetails);
+    setUserDetails({
+      userName: "",
+      userEmail: "",
+      userMessage: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    setErrors({})
+  };
   return (
     <section className="max-w-screen mx-auto px-10 bg-[#111] text-center py-10">
-      <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 mx-auto inline-block text-center text-[#5a189a] sm:border-b-2 sm:border-[rgb(157,78,221)] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] p-6 font-['Nunito'] transition-all opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out">
+      <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] transition-all duration-500 ease-in-out bg-[#111]">
         Let's Connect
       </h2>
       <div className="mt-[50px]">
-        <form name="contactUS" netlify className="w-19/20 sm:w-3/4 md:w-1/2 inset-0 m-auto">
-          <div className="my-9">
+        <form
+          className="w-19/20 sm:w-3/4 md:w-1/2 inset-0 m-auto"
+          onSubmit={handleForm}
+        >
+          <div className="my-9 relative">
             <label
               htmlFor="website-admin"
               className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#e0aaff]"
@@ -32,11 +80,14 @@ export default function Contact() {
                 id="website-admin"
                 className="hover:rounded-md rounded-e-md transition-all duration-300 bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#9d4edd] focus:border-[#5a189a] hover:border-white block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-400"
                 placeholder="Bonnie Green"
-                name="name"
+                name="userName"
+                value={userDetails.userName}
+                onChange={handleChange}
               />
             </div>
+            <p className="text-red-700 text-left pt-1 text-[12px] absolute">{errors.nameError}</p>
           </div>
-          <div className="my-9">
+          <div className="my-9 relative">
             <label
               htmlFor="website-email"
               className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#e0aaff]"
@@ -61,11 +112,14 @@ export default function Contact() {
                 id="website-email"
                 className="hover:rounded-md rounded-e-md transition-all duration-300 bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#9d4edd] focus:border-[#5a189a] hover:border-white block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-400"
                 placeholder="bonniegreen@gmail.com"
-                name="name"
+                name="userEmail"
+                value={userDetails.userEmail}
+                onChange={handleChange}
               />
             </div>
+            <p className="text-red-700 text-left pt-1 text-[12px] absolute">{errors.emailError}</p>
           </div>
-          <div className="my-9">
+          <div className="my-9 relative">
             <label
               htmlFor="message"
               className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#e0aaff]"
@@ -77,12 +131,15 @@ export default function Contact() {
               rows="8"
               className="hover:rounded-md rounded-md transition-all duration-300 bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#9d4edd] focus:border-[#5a189a] hover:border-white block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-400"
               placeholder="Leave a comment..."
-              name="name"
+              name="userMessage"
+              value={userDetails.userMessage}
+              onChange={handleChange}
             ></textarea>
+            <p className="text-red-700 text-left pt-1 text-[12px] absolute">{errors.messageError}</p>
           </div>
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center border-0 border-gray-300 rounded-s-md text-white text-[16px] sm:text-xl font-bold bg-[#7b2cbf] hover:bg-[#7b2cbf] focus:ring-4 focus:ring-[#7b2cbf] rounded-lg px-5 py-2.5 me-2 mb-2 focus:outline-none group"
+            className="mt-4 w-full inline-flex items-center justify-center border-0 border-gray-300 rounded-s-md text-white text-[16px] sm:text-xl font-bold bg-[#7b2cbf] hover:bg-[#7b2cbf] focus:ring-4 focus:ring-[#7b2cbf] rounded-lg px-5 py-2.5 me-2 focus:outline-none group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

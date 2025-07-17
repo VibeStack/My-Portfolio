@@ -58,7 +58,7 @@ export default function LatestWorks() {
       <section ref={scrollRef}
         className="pt-10 max-w-screen mx-auto px-10 md:px-15 lg:px-40 relative pb-8 sm:pb-16 bg-[#111] text-white"
       >
-        <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-2xl shadow-[#e0aaff] font-['Nunito'] transition-all opacity-100 sm:scale-100 sm:hover:scale-110 duration-500 ease-in-out bg-[#111]">
+        <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] transition-all duration-500 ease-in-out bg-[#111]">
           Latest Works
         </h2>
 
