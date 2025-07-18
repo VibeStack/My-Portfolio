@@ -1,58 +1,10 @@
 import React from "react";
 import SingleProject from "./SingleProject";
 import { useScroll } from "../hooks/useScroll";
+import { latestWorksCollection } from "../data";
 
 export default function LatestWorks() {
   const { scrollRef } = useScroll();
-  const latestWorksCollection = [
-    {
-      key:crypto.randomUUID(),
-      websiteLink: "https://countries-detailed-information-a.netlify.app/",
-      websiteImg: "/img/country-api.png",
-      websiteName: "Country API",
-      shortDisc: "Global Data",
-      longDisc:
-        "CountryAPI offers a comprehensive platform for accessing detailed global information, seamlessly integrating into applications",
-      techUsed: [
-        "html",
-        "css",
-        "react.js",
-        "javascript",
-        "parcel",
-      ],
-      imgPosition: "left",
-    },
-    {
-      key:crypto.randomUUID(),
-      websiteLink: "https://conference-ticket-generator-a.netlify.app/",
-      websiteImg: "/img/conference-ticket-generator.png",
-      websiteName: "Conference Ticket Generator",
-      shortDisc: "Ticket Generator",
-      longDisc:
-        "TicketGen is an innovative EdTech platform that simplifies conference ticket creation with a responsive interface. It delivers seamless ticket design and management.",
-      techUsed: [
-        "html",
-        "css",
-        "javascript",
-      ],
-      imgPosition: "right",
-    },
-    {
-      key:crypto.randomUUID(),
-      websiteLink: "https://focus-on-today-a.netlify.app/",
-      websiteImg: "/img/focus-on-today.png",
-      websiteName: "Focus On Today",
-      shortDisc: "Task Manager",
-      longDisc:
-        "FocusOnToday is a dynamic platform for adding, tracking, and locking tasks with a user-friendly interface. It streamlines task management and completion tracking.",
-      techUsed: [
-        "html",
-        "css",
-        "javascript",
-      ],
-      imgPosition: "left",
-    },
-  ];
   return (
     <>
       <section ref={scrollRef}

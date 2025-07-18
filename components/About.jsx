@@ -1,50 +1,9 @@
 import React, { useEffect, useState } from "react";
 import SingleToolTips from "./SingleToolTips";
+import { aboutToolTips, myLearnedTech } from "../data";
 
 export default function About({ onClose }) {
-  const myLearnedTech = [
-    "javascript",
-    "react.js",
-    "node.js",
-    "express.js",
-    "mongoDB",
-    "mongoose",
-    "html",
-    "css",
-    "sass",
-    "tailwind",
-    "git",
-    "github",
-    "terminal",
-    "java",
-    "mysql",
-  ];
-  const aboutToolTips = [
-    {
-      tech: "MongoDB",
-      img: "/img/mongoDB.svg",
-      symbol: "M",
-      textColor: "#499e49",
-    },
-    {
-      tech: "Express.JS",
-      img: "/img/express.svg",
-      symbol: "E",
-      textColor: "#fff",
-    },
-    {
-      tech: "React.JS",
-      img: "/img/react.svg",
-      symbol: "R",
-      textColor: "#64dcf5",
-    },
-    {
-      tech: "Node.JS",
-      img: "/img/node.svg",
-      symbol: "N",
-      textColor: "#8dc154",
-    },
-  ];
+  
   const [show, setShow] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -6,17 +6,9 @@ import { Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { clientReviewData } from "../data";
 
 export default function ExpertsView() {
-  const clientReviewData = [
-    {
-      clientName: "Dr. Kapil Sharma",
-      clientPosition: "Assistant Professor, GNDEC",
-      clientImg: "/img/kapilSirPic.jpeg",
-      clientReview:
-        `Arshdeep Anand is an extremely dedicated student who consistently excels in all tasks. His ability to quickly understand complex concepts and his willingness to assist others set him apart. Arshdeep is also an accomplished coder, often referred to as an "Einstein coder," showcasing strong technical skills. He is reliable, always available to support his peers, and demonstrates a deep knowledge of his subjects. Beyond his academic and technical strengths, Arshdeep is a humble and respectful individual. His positive attitude and strong work ethic ensure continued success in all his endeavors.`,
-    },
-  ];
   return (
     <>
       <section className="max-w-screen mx-auto px-10 bg-[#111] text-center">
