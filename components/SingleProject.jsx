@@ -10,7 +10,7 @@ export default function SingleProject({
   imgPosition,
 }) {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-[80px] items-center relative my-25">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-[80px] items-center relative mt-25 mb-10">
       <div className={`h-[1px] ${
           imgPosition === "left" ? "left-1/4 right-1/2" : "left-1/2 right-1/4"
         } bg-[#ced4da] absolute top-1/2 hidden sm:block`}
