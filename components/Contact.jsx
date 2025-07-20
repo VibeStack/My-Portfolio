@@ -59,7 +59,7 @@ export default function Contact() {
           <div className="my-9 relative">
             <label
               htmlFor="website-admin"
-              className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#e0aaff]"
+              className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#9c51e4]"
             >
               Username
             </label>
@@ -90,7 +90,7 @@ export default function Contact() {
           <div className="my-9 relative">
             <label
               htmlFor="website-email"
-              className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#e0aaff]"
+              className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#9c51e4]"
             >
               E-Mail
             </label>
@@ -122,7 +122,7 @@ export default function Contact() {
           <div className="my-9 relative">
             <label
               htmlFor="message"
-              className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#e0aaff]"
+              className="block mb-2 text-2xl font-['Nonito'] font-medium text-left text-gray-900 dark:text-[#9c51e4]"
             >
               Your Message
             </label>

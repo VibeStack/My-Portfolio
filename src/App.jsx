@@ -5,12 +5,14 @@ import { ScrollProvider } from "../context/scrollProvider";
 import ExpertsView from "../components/ExpertsView";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Skills from "../components/Skills";
 
 function App() {
   return (
     <ScrollProvider>
       <Home />
       <LatestWorks />
+      <Skills />
       <ExpertsView />
       <Contact />
       <Footer />
