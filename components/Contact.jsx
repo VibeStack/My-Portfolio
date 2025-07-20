@@ -16,15 +16,29 @@ export default function Contact() {
   const validateForm = (formData) => {
     const errorsData = {};
 
-    if (!formData.user_name) {
+    if (!formData.user_name.trim()) {
       errorsData.nameError = "Enter User's Name!";
     }
-    if (!formData.user_email) {
-      errorsData.emailError = "Enter User's Email!";
+
+    const email = formData.user_email.trim();
+
+    if (email === "") {
+      errorsData.emailError = "Please enter your email!";
+    } 
+    else{
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValidEmail = emailPattern.test(email);
+
+      if (!isValidEmail) {
+        errorsData.emailError =
+          "Please enter a valid email (e.g., bonniegreen@gmail.com)";
+      }
     }
-    if (!formData.message) {
+
+    if (!formData.message.trim()) {
       errorsData.messageError = "Enter Your Message!";
     }
+
     setErrors(errorsData);
     return errorsData;
   };
@@ -33,9 +47,27 @@ export default function Contact() {
     e.preventDefault();
 
     const validateResult = validateForm(userDetails);
-    if (Object.keys(validateResult).length) return;
+    const hasErrors = Object.keys(validateResult).length > 0;
 
-    console.log(form.current);
+    if (hasErrors) {
+      toast.error("Please fix the errors before submitting!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
+
+      const newUserDetails = { ...userDetails };
+      if (validateResult.nameError) newUserDetails.user_name = "";
+      if (validateResult.emailError) newUserDetails.user_email = "";
+      if (validateResult.messageError) newUserDetails.message = "";
+      setUserDetails(newUserDetails);
+
+      return;
+    }
 
     emailjs
       .sendForm("service_1olx4s4", "template_i2b6s29", form.current, {
