@@ -64,7 +64,7 @@ export default function Contact() {
               Username
             </label>
             <div className="flex">
-              <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-[#364152] dark:text-gray-400 dark:border-gray-600">
+              <span className="inline-flex items-center px-3 text-sm text-gray-900 border border-e-0 border-gray-300 rounded-s-md dark:border-gray-600 bg-[#4a5565]">
                 <svg
                   className="w-4 h-4 text-gray-500 dark:text-gray-400"
                   aria-hidden="true"
