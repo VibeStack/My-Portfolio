@@ -68,7 +68,6 @@ export default function Contact() {
           });
         }
       );
-
     console.log(isSent);
     setUserDetails({
       user_name: "",
