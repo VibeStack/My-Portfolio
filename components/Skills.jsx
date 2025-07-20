@@ -13,7 +13,7 @@ export default function Skills() {
         <h2 className="inline-block text-[24px] sm:text-6xl z-15 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">
           Skills
         </h2>
-        <p className="text-gray-400 mt-8 text-lg font-semibold">
+        <p className="text-white mt-8 text-xl">
           Showcasing a diverse skill set spanning frontend frameworks, backend
           technologies, programming languages, and development tools—each
           sharpened by real-world project experience.
@@ -25,7 +25,7 @@ export default function Skills() {
         {SkillsInfo.map((category) => (
           <div
             key={category.title}
-            className="bg-[#222] backdrop-blur-md px-8 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] flex flex-col items-center"
+            className="bg-[#222] px-8 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[45%] border-[#e0aaff] shadow-[0_0_10px_rgba(224,170,255,1)] rounded-3xl flex flex-col items-center"
           >
             <h3
               className="text-2xl sm:text-3xl font-semibold text-[#9c51e4] mb-8 py-2 px-4 border-b-2 inline-block mx-auto text-center shadow-md shadow-[#e0aaff] rounded"
