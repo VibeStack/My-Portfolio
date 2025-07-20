@@ -1,23 +1,28 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef();
+  const [isSent, setIsSent] = useState(false);
   const [userDetails, setUserDetails] = useState({
-    userName: "",
-    userEmail: "",
-    userMessage: "",
+    user_name: "",
+    user_email: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
   const validateForm = (formData) => {
     const errorsData = {};
 
-    if (!formData.userName) {
+    if (!formData.user_name) {
       errorsData.nameError = "Enter User's Name!";
     }
-    if (!formData.userEmail) {
+    if (!formData.user_email) {
       errorsData.emailError = "Enter User's Email!";
     }
-    if (!formData.userMessage) {
+    if (!formData.message) {
       errorsData.messageError = "Enter Your Message!";
     }
     setErrors(errorsData);
@@ -30,11 +35,45 @@ export default function Contact() {
     const validateResult = validateForm(userDetails);
     if (Object.keys(validateResult).length) return;
 
-    console.log(userDetails);
+    console.log(form.current);
+
+    emailjs
+      .sendForm("service_1olx4s4", "template_i2b6s29", form.current, {
+        publicKey: "QGfNo54TLUVSjlAf4",
+      })
+      .then(
+        () => {
+          setIsSent(true);
+          form.current.reset();
+          toast.success("Message Sent Successfully! ✅", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "dark",
+          });
+        },
+        (error) => {
+          toast.error("Error Sending Message", error);
+          toast.error("Failed To Send Message. Please Try Again", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "dark",
+          });
+        }
+      );
+
+    console.log(isSent);
     setUserDetails({
-      userName: "",
-      userEmail: "",
-      userMessage: "",
+      user_name: "",
+      user_email: "",
+      message: "",
     });
   };
 
@@ -44,10 +83,11 @@ export default function Contact() {
       ...prevState,
       [name]: value,
     }));
-    setErrors({})
+    setErrors({});
   };
   return (
     <section className="max-w-screen mx-auto px-10 bg-[#111] text-center py-10">
+      <ToastContainer />
       <h2 className="inline-block text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">
         Let's Connect
       </h2>
@@ -55,6 +95,7 @@ export default function Contact() {
         <form
           className="w-19/20 sm:w-3/4 md:w-1/2 inset-0 m-auto"
           onSubmit={handleForm}
+          ref={form}
         >
           <div className="my-9 relative">
             <label
@@ -80,12 +121,14 @@ export default function Contact() {
                 id="website-admin"
                 className="hover:rounded-md rounded-e-md transition-all duration-300 bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#9d4edd] focus:border-[#5a189a] hover:border-white block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-400"
                 placeholder="Bonnie Green"
-                name="userName"
-                value={userDetails.userName}
+                name="user_name"
+                value={userDetails.user_name}
                 onChange={handleChange}
               />
             </div>
-            <p className="text-red-700 text-left pt-1 text-[12px] absolute">{errors.nameError}</p>
+            <p className="text-red-700 text-left pt-1 text-[12px] absolute">
+              {errors.nameError}
+            </p>
           </div>
           <div className="my-9 relative">
             <label
@@ -112,12 +155,14 @@ export default function Contact() {
                 id="website-email"
                 className="hover:rounded-md rounded-e-md transition-all duration-300 bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#9d4edd] focus:border-[#5a189a] hover:border-white block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-400"
                 placeholder="bonniegreen@gmail.com"
-                name="userEmail"
-                value={userDetails.userEmail}
+                name="user_email"
+                value={userDetails.user_email}
                 onChange={handleChange}
               />
             </div>
-            <p className="text-red-700 text-left pt-1 text-[12px] absolute">{errors.emailError}</p>
+            <p className="text-red-700 text-left pt-1 text-[12px] absolute">
+              {errors.emailError}
+            </p>
           </div>
           <div className="my-9 relative">
             <label
@@ -131,11 +176,13 @@ export default function Contact() {
               rows="8"
               className="hover:rounded-md rounded-md transition-all duration-300 bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#9d4edd] focus:border-[#5a189a] hover:border-white block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-400"
               placeholder="Leave a comment..."
-              name="userMessage"
-              value={userDetails.userMessage}
+              name="message"
+              value={userDetails.message}
               onChange={handleChange}
             ></textarea>
-            <p className="text-red-700 text-left pt-1 text-[12px] absolute">{errors.messageError}</p>
+            <p className="text-red-700 text-left pt-1 text-[12px] absolute">
+              {errors.messageError}
+            </p>
           </div>
           <button
             type="submit"
