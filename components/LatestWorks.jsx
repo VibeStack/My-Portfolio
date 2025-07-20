@@ -8,9 +8,9 @@ export default function LatestWorks() {
   return (
     <>
       <section ref={scrollRef}
-        className="pt-10 max-w-screen mx-auto px-10 md:px-15 lg:px-40 relative pb-8 sm:pb-16 bg-[#111] text-white"
+        className="pt-10 md:px-15 lg:px-40 relative pb-8 sm:pb-16 bg-[#111] text-white max-w-screen mx-auto px-10 text-center "
       >
-        <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] transition-all duration-500 ease-in-out bg-[#111]">
+        <h2 className="inline-block text-[24px] sm:text-6xl z-15 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">
           Latest Works
         </h2>
 
@@ -32,7 +32,7 @@ export default function LatestWorks() {
               />
             );
           })}
-        <div className="w-[1px] hidden sm:block bg-[#ced4da] absolute top-30 bottom-0 left-1/2 -translate-x-1/2 " />
+        <div className="w-[1px] hidden sm:block bg-[#ced4da] absolute top-35 bottom-0 left-1/2 -translate-x-1/2 z-0" />
       </section>
     </>
   );

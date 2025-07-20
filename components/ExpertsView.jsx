@@ -12,7 +12,7 @@ export default function ExpertsView() {
   return (
     <>
       <section className="max-w-screen mx-auto px-10 bg-[#111] text-center">
-        <h2 className="text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 w-max mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] transition-all duration-500 ease-in-out bg-[#111]">
+        <h2 className="inline-block text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">
           What Experts Say About My Work
         </h2>
       </section>

@@ -51,7 +51,7 @@ export default function SingleProject({
             src={websiteImg}
             alt=""
           />
-          <span className="flex group-hover:-top-14 ease-jump duration-200 bg-[#ced4da] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:-z-1 text-[#111] sm:text-[12px] md:text-[16px] ">
+          <span className="flex group-hover:-top-14 ease-jump duration-200 bg-[#ced4da] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 mt-2 rounded w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 after:-z-1 text-[#111] md:text-[12px] lg:text-[16px] group">
             {websiteName}
             <svg
               xmlns="http://www.w3.org/2000/svg"

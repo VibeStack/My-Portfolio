@@ -84,7 +84,7 @@ export default function Home() {
                 <Typing
                   text={[
                     "Software Developer",
-                    "Full Stack Develoepr",
+                    "Full Stack Developer",
                     "MERN Stack Developer",
                   ]}
                 />
@@ -138,7 +138,7 @@ export default function Home() {
               )}
             </div>
           </div>
-          <ul className="ml-auto px-4 space-y-6 text-[#b0b2c3] absolute right-8">
+          <ul className="ml-auto px-4 space-y-6 text-[#b0b2c3] absolute right-2 md:right-8">
             <li>
               <a
                 href="https://www.linkedin.com/in/arshdeep-anand-600865288/"
@@ -156,7 +156,6 @@ export default function Home() {
                 </svg>
               </a>
             </li>
-
             <li>
               <a
                 href="https://www.instagram.com/radioactive_arsh05/"
