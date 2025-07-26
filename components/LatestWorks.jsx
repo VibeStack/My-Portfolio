@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import SingleProject from "./SingleProject";
-import { useScroll } from "../hooks/useScroll";
 import { latestWorksCollection } from "../data";
+import { ScrollContext } from "../context/scrollContext";
 
 export default function LatestWorks() {
-  const { scrollRef } = useScroll();
+  const { sectionRefs } = useContext(ScrollContext);
   return (
     <>
-      <section ref={scrollRef}
+      <section ref={sectionRefs.latestWorks}
         className="pt-10 md:px-15 lg:px-40 relative pb-8 sm:pb-16 bg-[#111] text-white max-w-screen mx-auto px-10 text-center font-['Nonito']"
       >
         <h2 className="inline-block text-[24px] sm:text-6xl z-15 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">

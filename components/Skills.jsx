@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { SkillsInfo } from "../data";
 import Tilt from "react-parallax-tilt";
+import { ScrollContext } from "../context/scrollContext";
 
 export default function Skills() {
+  const { sectionRefs } = useContext(ScrollContext);
   return (
-    <section
+    <section ref={sectionRefs.moreSkills}
       id="skills"
-      className="bg-[#111] pb-24 px-[5vw] md:px-[10vw] lg:px-[10vw] xl:px-[20vw] bg-skills-gradient clip-path-custom font-['Nonito'] relative"
+      className="bg-[#111] px-[5vw] md:px-[10vw] lg:px-[10vw] xl:px-[20vw] bg-skills-gradient clip-path-custom font-['Nonito'] relative"
     >
       {/* Section Title */}
       <div className="text-center mb-8">

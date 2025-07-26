@@ -1,17 +1,23 @@
-import { useRef } from 'react';
-import { ScrollContext } from './scrollContext';
+import { useRef } from "react";
+import { ScrollContext } from "./scrollContext";
 
 export const ScrollProvider = ({ children }) => {
-  const scrollRef = useRef(null);
+  const sectionRefs = {
+    home:useRef(null),
+    latestWorks:useRef(null),
+    moreSkills:useRef(null),
+    contact:useRef(null),
+  }
 
-  const scrollToLatestWorks = () => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollTo = (key) => {
+    sectionRefs[key]?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <ScrollContext.Provider value={{ scrollRef, scrollToLatestWorks }}>
-      {children}
+    <ScrollContext.Provider value={{ sectionRefs, scrollTo }}>
+        <div className="scroll-container relative">
+          {children}
+        </div>
     </ScrollContext.Provider>
   );
 };
-

@@ -1,73 +1,122 @@
-import htmlLogo from '/tech_logo/html.png';
-import cssLogo from '/tech_logo/css.png';
-import sassLogo from '/tech_logo/sass.png';
-import javascriptLogo from '/tech_logo/javascript.png';
-import reactjsLogo from '/tech_logo/reactjs.png';
-import reduxLogo from '/tech_logo/redux.png';
-import nextjsLogo from '/tech_logo/nextjs.png';
-import tailwindcssLogo from '/tech_logo/tailwindcss.png';
-import nodejsLogo from '/tech_logo/nodejs.png';
-import expressjsLogo from '/tech_logo/express.png';
-import mysqlLogo from '/tech_logo/mysql.png';
-import mongodbLogo from '/tech_logo/mongodb.png';
-import cLogo from '/tech_logo/c.png';
-import cppLogo from '/tech_logo/cpp.png';
-import javaLogo from '/tech_logo/java.png';
-import pythonLogo from '/tech_logo/python.png';
-import typescriptLogo from '/tech_logo/typescript.png';
-import gitLogo from '/tech_logo/git.png';
-import githubLogo from '/tech_logo/github.png';
-import vscodeLogo from '/tech_logo/vscode.png';
-import postmanLogo from '/tech_logo/postman.png';
-import mcLogo from '/tech_logo/mc.png';
-import figmaLogo from '/tech_logo/figma.png';
-import netlifyLogo from '/tech_logo/netlify.png';
-import latexLogo from '/tech_logo/latex.png';
+import htmlLogo from "/tech_logo/html.png";
+import cssLogo from "/tech_logo/css.png";
+import sassLogo from "/tech_logo/sass.png";
+import javascriptLogo from "/tech_logo/javascript.png";
+import reactjsLogo from "/tech_logo/reactjs.png";
+import reduxLogo from "/tech_logo/redux.png";
+import nextjsLogo from "/tech_logo/nextjs.png";
+import tailwindcssLogo from "/tech_logo/tailwindcss.png";
+import nodejsLogo from "/tech_logo/nodejs.png";
+import expressjsLogo from "/tech_logo/express.png";
+import mysqlLogo from "/tech_logo/mysql.png";
+import mongodbLogo from "/tech_logo/mongodb.png";
+import cLogo from "/tech_logo/c.png";
+import cppLogo from "/tech_logo/cpp.png";
+import javaLogo from "/tech_logo/java.png";
+import pythonLogo from "/tech_logo/python.png";
+import typescriptLogo from "/tech_logo/typescript.png";
+import gitLogo from "/tech_logo/git.png";
+import githubLogo from "/tech_logo/github.png";
+import vscodeLogo from "/tech_logo/vscode.png";
+import postmanLogo from "/tech_logo/postman.png";
+import mcLogo from "/tech_logo/mc.png";
+import figmaLogo from "/tech_logo/figma.png";
+import netlifyLogo from "/tech_logo/netlify.png";
+import latexLogo from "/tech_logo/latex.png";
+
+export const aboutPageSkills = [
+  { name: "JavaScript", level: 95, color: "from-yellow-400 to-yellow-600" },
+  { name: "React.js", level: 70, color: "from-blue-400 to-blue-600" },
+  { name: "Node.js", level: 45, color: "from-green-400 to-green-600" },
+  { name: "Express.js", level: 30, color: "from-gray-400 to-gray-600" },
+  { name: "MongoDB", level: 20, color: "from-green-400 to-green-700" },
+  { name: "TypeScript", level: 20, color: "from-blue-500 to-blue-700" },
+  { name: "CSS/Tailwind", level: 90, color: "from-cyan-400 to-cyan-600" },
+  { name: "Python", level: 75, color: "from-blue-400 to-yellow-400" },
+];
+
+export const journey = [
+  {
+    year: "2025",
+    title: "MERN Stack Developer + Professional Projects",
+    description: "Expanded to backend with Node.js and databases +Building production-ready applications",
+  },
+  {
+    year: "2024",
+    title: "Frontend",
+    description: "Mastered JS",
+  },
+  {
+    year: "2023",
+    title: "Started Programming Journey",
+    description: "Began with HTML, CSS, and JavaScript fundamentals",
+  },
+];
+
+export const interests = [
+    {
+      name: "Coffee Enthusiast",
+      desc: "Fueling late-night coding sessions",
+    },
+    {
+      name: "Cartoon",
+      desc: "Easy way to relaxing my mind",
+    },
+    {
+      name: "Music",
+      desc: "Coding to lo-fi and electronic beats",
+    },
+    {
+      name: "Learning",
+      desc: "Always exploring new technologies",
+    },
+  ];
+
 export const SkillsInfo = [
   {
-    title: 'Frontend',
+    title: "Frontend",
     skills: [
-      { name: 'HTML', logo: htmlLogo },
-      { name: 'CSS', logo: cssLogo },
-      { name: 'SASS', logo: sassLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'React JS', logo: reactjsLogo },
-      { name: 'Redux', logo: reduxLogo },
-      { name: 'Next JS', logo: nextjsLogo },
-      { name: 'Tailwind CSS', logo: tailwindcssLogo },
+      { name: "HTML", logo: htmlLogo },
+      { name: "CSS", logo: cssLogo },
+      { name: "SASS", logo: sassLogo },
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "React JS", logo: reactjsLogo },
+      { name: "Redux", logo: reduxLogo },
+      { name: "Next JS", logo: nextjsLogo },
+      { name: "Tailwind CSS", logo: tailwindcssLogo },
     ],
   },
   {
-    title: 'Backend',
+    title: "Backend",
     skills: [
-      { name: 'Node JS', logo: nodejsLogo },
-      { name: 'Express JS', logo: expressjsLogo },
-      { name: 'MySQL', logo: mysqlLogo },
-      { name: 'MongoDB', logo: mongodbLogo },
+      { name: "Node JS", logo: nodejsLogo },
+      { name: "Express JS", logo: expressjsLogo },
+      { name: "MySQL", logo: mysqlLogo },
+      { name: "MongoDB", logo: mongodbLogo },
     ],
   },
   {
-    title: 'Languages',
+    title: "Languages",
     skills: [
-      { name: 'C', logo: cLogo },
-      { name: 'C++', logo: cppLogo },
-      { name: 'Java', logo: javaLogo },
-      { name: 'Python', logo: pythonLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'TypeScript', logo: typescriptLogo },
+      { name: "C", logo: cLogo },
+      { name: "C++", logo: cppLogo },
+      { name: "Java", logo: javaLogo },
+      { name: "Python", logo: pythonLogo },
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "TypeScript", logo: typescriptLogo },
     ],
   },
   {
-    title: 'Tools',
+    title: "Tools",
     skills: [
-      { name: 'Git', logo: gitLogo },
-      { name: 'GitHub', logo: githubLogo },
-      { name: 'VS Code', logo: vscodeLogo },
-      { name: 'Postman', logo: postmanLogo },
-      { name: 'Compass', logo: mcLogo },
-      { name: 'Netlify', logo: netlifyLogo },
-      { name: 'Figma', logo: figmaLogo },
-      { name: 'Latex', logo: latexLogo },
+      { name: "Git", logo: gitLogo },
+      { name: "GitHub", logo: githubLogo },
+      { name: "VS Code", logo: vscodeLogo },
+      { name: "Postman", logo: postmanLogo },
+      { name: "Compass", logo: mcLogo },
+      { name: "Netlify", logo: netlifyLogo },
+      { name: "Figma", logo: figmaLogo },
+      { name: "Latex", logo: latexLogo },
     ],
   },
 ];

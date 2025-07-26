@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useEffect, useRef } from "react";
-import About from "./About";
-import { useScroll } from "../hooks/useScroll";
 import { runMatter } from "../matter";
 import { Typewriter, Cursor } from "react-simple-typewriter";
 import Header from "./Header";
+import About from "./About"
+import { ScrollContext } from "../context/scrollContext";
 
 export default function Home() {
+  const {sectionRefs} = useContext(ScrollContext)
+  const [showAbout, setShowAbout] = useState(false);
+  const handleAboutClick = () => {
+    setShowAbout(true);
+  };
+  const handleCloseAbout = () => {
+    setShowAbout(false);
+  }
   const Typing = ({ text }) => {
     return (
       <>
@@ -22,8 +30,8 @@ export default function Home() {
     );
   };
 
-  const { scrollToLatestWorks } = useScroll();
-  const [showAboutPopup, setShowAboutPopup] = useState(false);
+  const { scrollTo } = useContext(ScrollContext)
+
   const wrapperRef = useRef(null);
   useEffect(() => {
     if (location.pathname === "/" && wrapperRef.current) {
@@ -33,8 +41,9 @@ export default function Home() {
 
   return (
     <div className="home-page bg-[#111] text-white font-['Nunito']">
-      <section className="h-screen flex flex-col justify-between">
-        <Header popup={showAboutPopup} />
+      <section ref={sectionRefs.home} className="h-screen flex flex-col justify-between">
+        <Header />
+        <About isOpen={showAbout} onClose={handleCloseAbout} />
         <div
           className="absolute inset-0 hidden md:block"
           id="wrapper-canvas"
@@ -90,9 +99,8 @@ export default function Home() {
                 />
               </p>
               <button
-                className="flex items-center relative bg-[#C084FC] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#9d4edd] to-[#5a189a] hover:scale-110 hover:from-[#7b2cbf] hover:to-[#3c096c] group"
-                onClick={() => setShowAboutPopup(true)}
-              >
+                onClick={handleAboutClick}
+                className="flex items-center relative bg-[#C084FC] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#9d4edd] to-[#5a189a] hover:scale-110 hover:from-[#7b2cbf] hover:to-[#3c096c] group">
                 About Me
                 <svg
                   xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -133,9 +141,6 @@ export default function Home() {
                   </g>
                 </svg>
               </button>
-              {showAboutPopup && (
-                <About onClose={() => setShowAboutPopup(false)} />
-              )}
             </div>
           </div>
           <ul className="ml-auto px-4 space-y-6 text-[#b0b2c3] absolute right-2 md:right-8">
@@ -205,12 +210,10 @@ export default function Home() {
         </div>
 
         <div
-          className={`relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:left-1/2 after:-translate-x-1/2 after:bg-[#444] after:top-[100px] ${
-            showAboutPopup ? "opacity-0" : ""
-          }`}
+          className={`relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:left-1/2 after:-translate-x-1/2 after:bg-[#444] after:top-[100px]`}
         >
           <button
-            onClick={scrollToLatestWorks}
+            onClick={()=> scrollTo("latestWorks")}
             className="flex items-center relative bg-[#C084FC] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#9d4edd] to-[#5a189a] hover:scale-110 hover:from-[#7b2cbf] hover:to-[#3c096c] transition-all duration-500 group mb-20 "
           >
             Latest Works

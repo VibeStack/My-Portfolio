@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -18,26 +22,25 @@
 .swiper-pagination-bullet.swiper-pagination-bullet{
   background-color: #bc85f3;
 }
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-y: scroll; /* enable vertical scrolling */
-  scroll-behavior: smooth;
+.scroll-container {
+  height: 100vh;             
+  overflow-y: scroll;             
+  overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: scroll;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #9d4edd;
-  border-radius: 10px;
+  background: #111;
 }
 
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #9d4edd #fff;
+::-webkit-scrollbar-thumb {
+  background: #5a189a;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9d4edd;
 }

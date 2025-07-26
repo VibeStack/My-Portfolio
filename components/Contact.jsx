@@ -1,9 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
+import { ScrollContext } from "../context/scrollContext";
 
 export default function Contact() {
+  const { sectionRefs } = useContext(ScrollContext);
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
   const [userDetails, setUserDetails] = useState({
@@ -117,12 +119,13 @@ export default function Contact() {
     setErrors({});
   };
   return (
-    <section className="max-w-screen mx-auto px-10 bg-[#111] text-center py-10 relative">
+    <section ref={sectionRefs.contact}
+    className="max-w-screen mx-auto px-10 bg-[#111] text-center pt-10 relative">
       <ToastContainer />
       <h2 className="inline-block text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">
         Let's Connect
       </h2>
-      <div className="mt-[50px]">
+      <div className="mt-20">
         <form
           className="w-19/20 sm:w-3/4 md:w-1/2 inset-0 m-auto"
           onSubmit={handleForm}

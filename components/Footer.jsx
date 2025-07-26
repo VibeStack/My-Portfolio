@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ScrollContext } from "../context/scrollContext";
 
 export default function Footer() {
+  const {scrollTo} = useContext(ScrollContext)
   return (
     <footer className="bg-[#111] text-xs text-gray-500 py-10 flex flex-col justify-center items-center relative">
       <p>Arshdeep Anand &copy; 2025</p>
-      <a href="#"><img className="w-15 h-15 my-4" src="/name-logo-white.svg" alt="" /></a>
+      <button onClick={()=> scrollTo("home")}><img className="w-15 h-15 my-4" src="/name-logo-white.svg" alt="" /></button>
       <ul className="m-auto text-[#b0b2c3] flex gap-x-15 items-center">
         <li>
           <a
