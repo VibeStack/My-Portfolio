@@ -52,7 +52,7 @@ const About = ({ isOpen, onClose }) => {
 
           <div className="flex flex-col md:flex-row w-full relative">
             {/* Sidebar */}
-            <div className="w-[30%] bg-gray-800 p-8 flex flex-col overflow-y-auto relative">
+            <div className="w-full md:w-[30%] bg-gray-800 p-8 flex flex-col overflow-y-auto relative">
               <div className="mb-8">
                 <div className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 mx-auto mb-6 overflow-hidden">
                   <img
@@ -104,7 +104,7 @@ const About = ({ isOpen, onClose }) => {
             </div>
 
             {/* Main Content */}
-            <div className="md:w-[70%] flex px-8 py-4 mb-10 overflow-y-auto relative xl:items-center">
+            <div className="w-full md:w-[70%] flex px-8 py-4 mb-10 md:overflow-y-auto relative xl:items-center">
               {activeTab === "story" && (
                 <div className="space-y-6">
                   <h3 className="text-3xl font-bold text-white">My Story</h3>
