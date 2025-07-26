@@ -45,7 +45,7 @@ export default function SingleProject({
           imgPosition === "right" ? "order-1 sm:order-2" : "order-1"
         }flex w-full relative justify-center sm:justify-start items-center`}
       >
-        <div className="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200">
+        <div className="flex flex-col items-center relative group sm:hover:scale-105 z-1 ease-in-out duration-200">
           <img
             className="max-w-[400px] w-full pl-auto relative z-10 drop-shadow-[0_0_100px_rgba(255,255,255,0.6)]"
             src={websiteImg}
