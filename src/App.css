@@ -18,3 +18,26 @@
 .swiper-pagination-bullet.swiper-pagination-bullet{
   background-color: #bc85f3;
 }
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* enable vertical scrolling */
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: scroll;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #9d4edd;
+  border-radius: 10px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9d4edd #fff;
+}

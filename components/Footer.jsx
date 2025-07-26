@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111] text-xs text-gray-500 py-10 flex flex-col justify-center items-center">
+    <footer className="bg-[#111] text-xs text-gray-500 py-10 flex flex-col justify-center items-center relative">
       <p>Arshdeep Anand &copy; 2025</p>
       <a href="#"><img className="w-15 h-15 my-4" src="/name-logo-white.svg" alt="" /></a>
       <ul className="m-auto text-[#b0b2c3] flex gap-x-15 items-center">

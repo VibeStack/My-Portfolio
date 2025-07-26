@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-[#111] pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] bg-skills-gradient clip-path-custom font-['Nonito']"
+      className="bg-[#111] pb-24 px-[5vw] md:px-[10vw] lg:px-[10vw] xl:px-[20vw] bg-skills-gradient clip-path-custom font-['Nonito'] relative"
     >
       {/* Section Title */}
       <div className="text-center mb-8">
@@ -21,7 +21,7 @@ export default function Skills() {
       </div>
 
       {/* Skill Categories */}
-      <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
+      <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between w-full">
         {SkillsInfo.map((category) => (
           <div
             key={category.title}
