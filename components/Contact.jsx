@@ -120,7 +120,7 @@ export default function Contact() {
   };
   return (
     <section ref={sectionRefs.contact}
-    className="max-w-screen mx-auto px-10 bg-[#111] text-center pt-10 relative">
+    className="max-w-screen mx-auto px-[5vw] bg-[#111] text-center pt-10 relative">
       <ToastContainer />
       <h2 className="inline-block text-[24px] sm:text-6xl relative z-10 font-extrabold px-4 py-4 mx-auto text-center text-[#5a189a] sm:border-b-2 sm:border-[#9d4edd] border-2 border-[#9d4edd] rounded-md shadow-md shadow-[#e0aaff] font-['Nunito'] bg-[#111]">
         Let's Connect
