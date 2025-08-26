@@ -1,8 +1,8 @@
 // src/matter.js
 
-import Matter from 'matter-js';
-import MatterAttractors from 'matter-attractors';
-import MatterWrap from 'matter-wrap';
+import Matter from "matter-js";
+import MatterAttractors from "matter-attractors";
+import MatterWrap from "matter-wrap";
 
 // Disable ESLint hook warning (they're not React hooks)
 // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -11,17 +11,8 @@ Matter.use(MatterAttractors);
 Matter.use(MatterWrap);
 
 export function runMatter(canvasElement) {
-  const {
-    Engine,
-    Events,
-    Runner,
-    Render,
-    World,
-    Body,
-    Mouse,
-    Common,
-    Bodies,
-  } = Matter;
+  const { Engine, Events, Runner, Render, World, Body, Mouse, Common, Bodies } =
+    Matter;
 
   let dimensions = {
     width: window.innerWidth,
@@ -47,7 +38,7 @@ export function runMatter(canvasElement) {
       width: dimensions.width,
       height: dimensions.height,
       wireframes: false,
-      background: 'transparent',
+      background: "transparent",
       showVelocity: false,
     },
   });
@@ -62,8 +53,8 @@ export function runMatter(canvasElement) {
     {
       isStatic: true,
       render: {
-        fillStyle: '#adb5bd',
-        strokeStyle: '#fff',
+        fillStyle: "#adb5bd",
+        strokeStyle: "#fff",
         lineWidth: 0,
       },
       plugin: {
@@ -82,7 +73,8 @@ export function runMatter(canvasElement) {
   for (let i = 0; i < 75; i++) {
     const x = Common.random(0, dimensions.width);
     const y = Common.random(0, dimensions.height);
-    const s = Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
+    const s =
+      Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
     const polygonNumber = Common.random(3, 6);
     const r = Common.random(0, 1);
 
@@ -92,8 +84,8 @@ export function runMatter(canvasElement) {
       frictionAir: 0.02,
       angle: Math.round(Math.random() * 360),
       render: {
-        fillStyle: '#222222',
-        strokeStyle: '#000000',
+        fillStyle: "#222222",
+        strokeStyle: "#000000",
         lineWidth: 2,
       },
     });
@@ -103,8 +95,8 @@ export function runMatter(canvasElement) {
       friction: 0,
       frictionAir: 0.01,
       render: {
-        fillStyle: r > 0.3 ? '#27292d' : '#444444',
-        strokeStyle: '#000000',
+        fillStyle: r > 0.3 ? "#27292d" : "#444444",
+        strokeStyle: "#000000",
         lineWidth: 2,
       },
     });
@@ -114,8 +106,8 @@ export function runMatter(canvasElement) {
       friction: 0,
       frictionAir: 0,
       render: {
-        fillStyle: r > 0.3 ? '#edf2fb44' : '#222222',
-        strokeStyle: '#111111',
+        fillStyle: r > 0.3 ? "#edf2fb44" : "#222222",
+        strokeStyle: "#111111",
         lineWidth: 4,
       },
     });
@@ -125,8 +117,8 @@ export function runMatter(canvasElement) {
       friction: 0.4,
       frictionAir: 0,
       render: {
-        fillStyle: '#191919',
-        strokeStyle: '#111111',
+        fillStyle: "#191919",
+        strokeStyle: "#111111",
         lineWidth: 3,
       },
     });
@@ -136,7 +128,7 @@ export function runMatter(canvasElement) {
 
   const mouse = Mouse.create(render.canvas);
 
-  Events.on(engine, 'afterUpdate', () => {
+  Events.on(engine, "afterUpdate", () => {
     if (!mouse.position.x) return;
     Body.translate(attractiveBody, {
       x: (mouse.position.x - attractiveBody.position.x) * 0.12,
@@ -146,6 +138,27 @@ export function runMatter(canvasElement) {
 
   Runner.run(runner, engine);
   Render.run(render);
+
+  function handleResize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // Update canvas size
+    render.canvas.width = width;
+    render.canvas.height = height;
+
+    render.options.width = width;
+    render.options.height = height;
+
+    // Reposition attractive body in the center
+    Body.setPosition(attractiveBody, {
+      x: width / 2,
+      y: height / 2,
+    });
+  }
+
+  window.addEventListener("resize", handleResize);
+  // --- End resize handler ---
 
   // Return clean control methods
   return {
@@ -160,6 +173,7 @@ export function runMatter(canvasElement) {
       if (render.canvas && render.canvas.parentNode) {
         render.canvas.parentNode.removeChild(render.canvas);
       }
+      window.removeEventListener('resize', handleResize); // clean up listener
     },
     play: () => {
       Runner.run(runner, engine);

@@ -24,6 +24,12 @@ import figmaLogo from "/tech_logo/figma.png";
 import netlifyLogo from "/tech_logo/netlify.png";
 import latexLogo from "/tech_logo/latex.png";
 
+import coffeeIcon from "/intrestImages/coffee.svg"
+import musicIcon from "/intrestImages/music.svg"
+import cartoonIcon from "/intrestImages/cartoon.svg"
+import learningIcon from "/intrestImages/learning.svg"
+
+
 export const aboutPageSkills = [
   { name: "JavaScript", level: 95, color: "from-yellow-400 to-yellow-600" },
   { name: "React.js", level: 70, color: "from-blue-400 to-blue-600" },
@@ -55,18 +61,22 @@ export const journey = [
 
 export const interests = [
     {
+      icon: coffeeIcon,
       name: "Coffee Enthusiast",
       desc: "Fueling late-night coding sessions",
     },
     {
+      icon: cartoonIcon,
       name: "Cartoon",
       desc: "Easy way to relaxing my mind",
     },
     {
+      icon: musicIcon,
       name: "Music",
       desc: "Coding to lo-fi and electronic beats",
     },
     {
+      icon: learningIcon,
       name: "Learning",
       desc: "Always exploring new technologies",
     },

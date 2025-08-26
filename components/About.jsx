@@ -54,7 +54,7 @@ const About = ({ isOpen, onClose }) => {
             {/* Sidebar */}
             <div className="w-full md:w-[30%] bg-gray-800 p-8 flex flex-col overflow-y-auto relative">
               <div className="mb-8">
-                <div className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 mx-auto mb-6 overflow-hidden">
+                <div className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-white mx-auto mb-6 overflow-hidden">
                   <img
                     src="./img/myPic.jpeg"
                     alt="Profile"
@@ -111,24 +111,26 @@ const About = ({ isOpen, onClose }) => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <p className="text-gray-300 leading-relaxed">
-                        A Tech Enthusiast, who loves to help, explore, and dive
-                        deep into concepts. I'm passionate about building
-                        meaningful tech solutions and continuously expanding my
-                        knowledge.
+                        I'm a tech enthusiast passionate about solving
+                        real-world problems through technology. I enjoy
+                        exploring concepts in depth and building meaningful
+                        solutions that combine innovation with impact.
                       </p>
                       <p className="text-gray-300 leading-relaxed">
-                        My journey began with simple Java and MySQl during my
-                        school time and has grown into building full-stack
-                        applications with modern technologies. I believe in
-                        writing clean, efficient code and creating user
-                        experiences that are both beautiful and functional.
+                        My journey started with Java and MySQL in school, and
+                        over time it has grown into developing full-stack
+                        applications with modern tools and frameworks. I believe
+                        in writing clean, efficient, and scalable code while
+                        crafting user experiences that are both functional and
+                        intuitive.
                       </p>
                       <p className="text-gray-300 leading-relaxed">
-                        When I'm not coding, you'll find me exploring new
-                        technologies, contributing to open-source projects, or
-                        sharing knowledge with the developer community. I'm
-                        always eager to take on new challenges and collaborate
-                        on exciting projects.
+                        Beyond coding, I explore emerging technologies,
+                        contribute to open-source, and share knowledge within
+                        the developer community. I'm always eager to take on new
+                        challenges, collaborate with like-minded people, and
+                        work on projects that push the boundaries of what
+                        technology can achieve.
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-6 border border-purple-500/20 h-max">
@@ -312,8 +314,8 @@ const About = ({ isOpen, onClose }) => {
                         className="bg-gray-800 rounded-xl p-6 hover:bg-gray-750 transition-colors duration-200"
                       >
                         <div className="flex items-center mb-3">
-                          <div className="w-12 h-12 bg-[#7b2cbf] rounded-lg flex items-center justify-center text-white mr-4">
-                            {interest.icon}
+                          <div className="w-12 h-12 bg-gray-400 rounded-lg flex items-center justify-center text-white mr-4">
+                            <img className="w-10" src={interest.icon} />
                           </div>
                           <h4 className="text-lg font-semibold text-white">
                             {interest.name}
@@ -336,7 +338,7 @@ const About = ({ isOpen, onClose }) => {
                     <button
                       onClick={() => {
                         scrollTo("contact");
-                        onClose()
+                        onClose();
                       }}
                       className="flex items-center relative bg-[#C084FC] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#9d4edd] to-[#5a189a] hover:scale-110 hover:from-[#7b2cbf] hover:to-[#3c096c] group"
                     >
