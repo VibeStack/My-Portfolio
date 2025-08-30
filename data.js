@@ -179,7 +179,7 @@ export const clientReviewData = [
     clientName: "Dr. Kapil Sharma",
     clientPosition: "Assistant Professor, GNDEC",
     clientImg: "/img/kapilSirPic.jpeg",
-    clientReview: `Arshdeep Anand is an extremely dedicated student who consistently excels in all tasks. His ability to quickly grasp complex concepts and his willingness to assist others set him apart. Arshdeep is also an accomplished coder, often referred to as an 'Einstein coder,' showcasing strong technical skills. He is reliable, always available to support his peers, and demonstrates deep knowledge of his subjects. Beyond his academic and technical strengths, Arshdeep is a humble and respectful individual. His positive attitude and strong work ethic ensure his continued success in all endeavors`,
+    clientReview: `Arshdeep Anand is an extremely dedicated student who consistently excels in all tasks. His ability to quickly grasp complex concepts and his willingness to assist others set him apart. Arshdeep is also an accomplished coder, often referred to as an 'Einstein coder,' showcasing strong technical skills. He is reliable, always available to support his peers, and demonstrates deep knowledge of his subjects. Beyond his academic and technical strengths, Arshdeep is a humble and respectful individual. His positive attitude and strong work ethic ensure his continued success in all endeavors.`,
   },
 ];
 export const latestWorksCollection = [
