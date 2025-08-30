@@ -15,7 +15,7 @@ export default function SingleReview({
         alt=""
       />
       <div className="md:ml-6 text-left pt-12 relative font-['Nunito']">
-        <p className="text-[12px] sm:text-[16px] pb-4">{clientReview}</p>
+        <p className="text-[12px] sm:text-[16px] pb-4 text-justify">{clientReview}</p>
         <h2 className="text-right font-bold text-2xl md:text-4xl text-[rgb(157,78,221)]">
           {clientName}
         </h2>
