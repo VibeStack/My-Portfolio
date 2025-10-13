@@ -217,3 +217,16 @@ export const latestWorksCollection = [
     imgPosition: "left",
   },
 ];
+
+export const techLinks = {
+  html: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  css: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  javascript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  "react.js": "https://react.dev/",
+  react: "https://react.dev/",
+  parcel: "https://parceljs.org/",
+  tailwind: "https://tailwindcss.com/",
+  nodejs: "https://nodejs.org/",
+  express: "https://expressjs.com/",
+  mongodb: "https://www.mongodb.com/",
+};

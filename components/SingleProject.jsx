@@ -1,4 +1,5 @@
 import React from "react";
+import { techLinks } from "../data";
 
 export default function SingleProject({
   websiteLink,
@@ -11,34 +12,54 @@ export default function SingleProject({
 }) {
   return (
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-[80px] items-center relative mt-25 mb-10">
-      <div className={`h-[1px] ${
+      <div
+        className={`h-[1px] ${
           imgPosition === "left" ? "left-1/4 right-1/2" : "left-1/2 right-1/4"
         } bg-[#ced4da] absolute top-1/2 hidden sm:block`}
       />
-      <a href={websiteLink} className="w-4 h-4 rounded-full border-[3px] border-[#ced4da] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block">
-      </a>
+      <a
+        href={websiteLink}
+        className="w-4 h-4 rounded-full border-[3px] border-[#ced4da] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+      ></a>
 
-      <div className="order-2 sm:order-1 w-full pt-5">
-        <h3 className="text-[#ced4da] font-bold text-2xl md:text-4xl">
+      <div className="order-2 sm:order-1 w-full pt-5 relative group">
+        {/* Project Name + Short Description */}
+        <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-[#e0aaff] via-[#c77dff] to-[#9d4edd] font-extrabold text-2xl md:text-4xl tracking-wide mb-1 transition-all duration-300 group-hover:scale-[1.02]">
           {websiteName}
         </h3>
-        <span className="text-[#ced4da] text-base md:text-lg">
-          {`(${shortDisc})`}
+        <span className="text-[#b8b8b8]/90 text-base md:text-lg italic block mb-2">
+          ({shortDisc})
         </span>
-        <p className="text-justify text-sm md:text-base mt-2 ">{longDisc}</p>
-        <ul className="flex flex-wrap gap-2 mt-2 ">
-          {techUsed.map((tech, i) => {
-            return (
-              <li
+
+        {/* Long Description */}
+        <p className="text-[#d1d1d1]/90 text-justify text-sm md:text-base mt-2 leading-relaxed transition-all duration-300 group-hover:text-[#ffffff]">
+          {longDisc}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="mt-5">
+          <h4 className="text-[#b8b8b8]/90 font-semibold uppercase tracking-widest mb-4 text-base md:text-lg italic block">
+            Tech Stack 💻
+          </h4>
+          <div className="flex flex-wrap gap-3">
+            {techUsed.map((tech, i) => (
+              <div
                 key={i}
-                className="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+                className="relative px-4 py-[8px] text-sm md:text-base text-[#e0aaff] font-semibold tracking-wide border border-[#9d4edd]/50 rounded-xl bg-[#1a1a1a]/40 backdrop-blur-sm shadow-[0_0_10px_#9d4edd20] overflow-hidden group/item transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_#9d4edd60]"
               >
-                #{tech}
-              </li>
-            );
-          })}
-        </ul>
+                <span className="relative z-10 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-[#c77dff] rounded-full animate-pulse"></span>
+                  {tech}
+                </span>
+
+                {/* Glow sweep effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#9d4edd]/0 via-[#9d4edd]/30 to-transparent translate-x-[-100%] group-hover/item:translate-x-[100%] transition-transform duration-700 ease-out"></span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
       <a
         href={websiteLink}
         className={`${
