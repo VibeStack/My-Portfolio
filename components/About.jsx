@@ -181,10 +181,10 @@ const About = ({ isOpen, onClose }) => {
                         className="space-y-2 w-[40%] md:w-[45%]"
                       >
                         <div className="flex justify-between items-center">
-                          <span className="text-white font-medium">
+                          <span className="text-white font-medium text-[12px] md:text-[16px]">
                             {skill.name}
                           </span>
-                          <span className="text-purple-400">
+                          <span className="text-purple-400 text-[12px] md:text-[16px]">
                             {skill.level}%
                           </span>
                         </div>
