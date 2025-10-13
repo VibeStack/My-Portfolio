@@ -33,9 +33,9 @@ import learningIcon from "/intrestImages/learning.svg"
 export const aboutPageSkills = [
   { name: "JavaScript", level: 95, color: "from-yellow-400 to-yellow-600" },
   { name: "React.js", level: 70, color: "from-blue-400 to-blue-600" },
-  { name: "Node.js", level: 45, color: "from-green-400 to-green-600" },
-  { name: "Express.js", level: 30, color: "from-gray-400 to-gray-600" },
-  { name: "MongoDB", level: 20, color: "from-green-400 to-green-700" },
+  { name: "Node.js", level: 80, color: "from-green-400 to-green-600" },
+  { name: "Express.js", level: 85, color: "from-gray-400 to-gray-600" },
+  { name: "MongoDB", level: 75, color: "from-green-400 to-green-700" },
   { name: "TypeScript", level: 20, color: "from-blue-500 to-blue-700" },
   { name: "CSS/Tailwind", level: 90, color: "from-cyan-400 to-cyan-600" },
   { name: "Python", level: 75, color: "from-blue-400 to-yellow-400" },
