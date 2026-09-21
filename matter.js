@@ -53,16 +53,29 @@ export function runMatter(canvasElement) {
     {
       isStatic: true,
       render: {
-        fillStyle: "#adb5bd",
-        strokeStyle: "#fff",
-        lineWidth: 0,
+        fillStyle: "#9d4edd18",
+        strokeStyle: "#c084fc33",
+        lineWidth: 1,
       },
       plugin: {
         attractors: [
-          (bodyA, bodyB) => ({
-            x: (bodyA.position.x - bodyB.position.x) * 1e-6,
-            y: (bodyA.position.y - bodyB.position.y) * 1e-6,
-          }),
+          (bodyA, bodyB) => {
+            const dx = bodyA.position.x - bodyB.position.x;
+            const dy = bodyA.position.y - bodyB.position.y;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            // Realistic inertia: Acceleration a = F / m.
+            // Small light bodies have lower mass so they experience higher acceleration and zoom towards cursor fast.
+            // Big heavy bodies have higher inertia so they move steadily and powerfully with more weight.
+            const mass = bodyB.mass || 1;
+            const baseAccel = 0.0035; 
+            const acceleration = baseAccel / Math.pow(mass, 0.45);
+            const forceMagnitude = Math.min(0.02, acceleration * mass);
+
+            return {
+              x: (dx / dist) * forceMagnitude,
+              y: (dy / dist) * forceMagnitude,
+            };
+          },
         ],
       },
     }
@@ -78,10 +91,13 @@ export function runMatter(canvasElement) {
     const polygonNumber = Common.random(3, 6);
     const r = Common.random(0, 1);
 
+    // Realistic scale: mass directly proportional to size/area (s^2)
+    // Small elements have low frictionAir (nimble & fast)
+    // Large heavy elements have more frictionAir and resistance (feel heavy & grounded)
     const shape = Bodies.polygon(x, y, polygonNumber, s, {
-      mass: s / 50,
-      friction: 0,
-      frictionAir: 0.02,
+      mass: (s * s) / 25,
+      friction: 0.1,
+      frictionAir: 0.001 + (s / 80) * 0.006,
       angle: Math.round(Math.random() * 360),
       render: {
         fillStyle: "#222222",
@@ -90,10 +106,11 @@ export function runMatter(canvasElement) {
       },
     });
 
-    const circle1 = Bodies.circle(x, y, Common.random(2, 10), {
-      mass: 0.1,
-      friction: 0,
-      frictionAir: 0.01,
+    const r1 = Common.random(2, 8); // Tiny circle: extremely light, fast & reactive
+    const circle1 = Bodies.circle(x, y, r1, {
+      mass: (r1 * r1) / 30,
+      friction: 0.05,
+      frictionAir: 0.001,
       render: {
         fillStyle: r > 0.3 ? "#27292d" : "#444444",
         strokeStyle: "#000000",
@@ -101,10 +118,11 @@ export function runMatter(canvasElement) {
       },
     });
 
-    const circle2 = Bodies.circle(x, y, Common.random(2, 20), {
-      mass: 0.5,
-      friction: 0,
-      frictionAir: 0,
+    const r2 = Common.random(8, 20); // Medium circle
+    const circle2 = Bodies.circle(x, y, r2, {
+      mass: (r2 * r2) / 25,
+      friction: 0.1,
+      frictionAir: 0.002,
       render: {
         fillStyle: r > 0.3 ? "#edf2fb44" : "#222222",
         strokeStyle: "#111111",
@@ -112,10 +130,11 @@ export function runMatter(canvasElement) {
       },
     });
 
-    const circle3 = Bodies.circle(x, y, Common.random(2, 30), {
-      mass: 0.75,
-      friction: 0.4,
-      frictionAir: 0,
+    const r3 = Common.random(20, 36); // Big circle: heavy weight, steady momentum
+    const circle3 = Bodies.circle(x, y, r3, {
+      mass: (r3 * r3) / 15,
+      friction: 0.2,
+      frictionAir: 0.005,
       render: {
         fillStyle: "#191919",
         strokeStyle: "#111111",
@@ -126,13 +145,29 @@ export function runMatter(canvasElement) {
     World.add(world, [shape, circle1, circle2, circle3]);
   }
 
-  const mouse = Mouse.create(render.canvas);
+  // Track global window mouse coordinates so canvas position is tracked everywhere across the viewport
+  const mousePos = {
+    x: dimensions.width / 2,
+    y: dimensions.height / 2,
+    active: false,
+  };
+
+  const handleMouseMove = (e) => {
+    mousePos.x = e.clientX;
+    mousePos.y = e.clientY;
+    mousePos.active = true;
+    // Set attractive body position directly on mouse move for instantaneous response
+    Body.setPosition(attractiveBody, { x: mousePos.x, y: mousePos.y });
+  };
+
+  window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
   Events.on(engine, "afterUpdate", () => {
-    if (!mouse.position.x) return;
-    Body.translate(attractiveBody, {
-      x: (mouse.position.x - attractiveBody.position.x) * 0.12,
-      y: (mouse.position.y - attractiveBody.position.y) * 0.12,
+    if (!mousePos.active) return;
+    // Ensure attractive center is locked to cursor position every frame
+    Body.setPosition(attractiveBody, {
+      x: mousePos.x,
+      y: mousePos.y,
     });
   });
 
@@ -173,7 +208,8 @@ export function runMatter(canvasElement) {
       if (render.canvas && render.canvas.parentNode) {
         render.canvas.parentNode.removeChild(render.canvas);
       }
-      window.removeEventListener('resize', handleResize); // clean up listener
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
     },
     play: () => {
       Runner.run(runner, engine);

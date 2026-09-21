@@ -15,9 +15,9 @@ export const ScrollProvider = ({ children }) => {
 
   return (
     <ScrollContext.Provider value={{ sectionRefs, scrollTo }}>
-        <div className="scroll-container relative">
-          {children}
-        </div>
+      <div className="relative w-full min-h-screen bg-[#0d0d11] text-white overflow-y-scroll overflow-x-hidden scroll-smooth">
+        {children}
+      </div>
     </ScrollContext.Provider>
   );
 };

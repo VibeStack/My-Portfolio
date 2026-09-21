@@ -23,6 +23,8 @@ import mcLogo from "/tech_logo/mc.png";
 import figmaLogo from "/tech_logo/figma.png";
 import netlifyLogo from "/tech_logo/netlify.png";
 import latexLogo from "/tech_logo/latex.png";
+import postgreLogo from "/tech_logo/postgre.png";
+import vercelLogo from "/tech_logo/vercel.png";
 
 import coffeeIcon from "/intrestImages/coffee.svg"
 import musicIcon from "/intrestImages/music.svg"
@@ -84,49 +86,57 @@ export const interests = [
 
 export const SkillsInfo = [
   {
-    title: "Frontend",
+    title: "Frontend & Full-Stack",
     skills: [
-      { name: "HTML", logo: htmlLogo },
-      { name: "CSS", logo: cssLogo },
-      { name: "SASS", logo: sassLogo },
-      { name: "JavaScript", logo: javascriptLogo },
+      { name: "Next.js", logo: nextjsLogo },
       { name: "React JS", logo: reactjsLogo },
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "TypeScript", logo: typescriptLogo },
       { name: "Redux", logo: reduxLogo },
-      // { name: "Next JS", logo: nextjsLogo },
       { name: "Tailwind CSS", logo: tailwindcssLogo },
+      { name: "HTML5", logo: htmlLogo },
+      { name: "CSS3 / SASS", logo: sassLogo },
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & Frameworks",
     skills: [
       { name: "Node JS", logo: nodejsLogo },
       { name: "Express JS", logo: expressjsLogo },
-      { name: "MySQL", logo: mysqlLogo },
-      { name: "MongoDB", logo: mongodbLogo },
-    ],
-  },
-  {
-    title: "Languages",
-    skills: [
-      { name: "C", logo: cLogo },
-      { name: "C++", logo: cppLogo },
-      { name: "Java", logo: javaLogo },
+      { name: "PHP", iconName: "PHP" },
+      { name: "Laravel", iconName: "Laravel" },
+      { name: "Prisma ORM", iconName: "Prisma ORM" },
       { name: "Python", logo: pythonLogo },
-      { name: "JavaScript", logo: javascriptLogo },
-      { name: "TypeScript", logo: typescriptLogo },
+      { name: "Java", logo: javaLogo },
+      { name: "C++", logo: cppLogo },
     ],
   },
   {
-    title: "Tools",
+    title: "Databases & Storage",
     skills: [
+      { name: "PostgreSQL", logo: postgreLogo },
+      { name: "MongoDB", logo: mongodbLogo },
+      { name: "MySQL", logo: mysqlLogo },
+      { name: "SQL / Relational DBs", iconName: "SQL / Relational DBs" },
+      { name: "AWS S3 Bucket", iconName: "AWS (EC2 & S3)" },
+    ],
+  },
+  {
+    title: "DevOps, Cloud & Tooling",
+    skills: [
+      { name: "Docker", iconName: "Docker" },
+      { name: "AWS (EC2 & S3)", iconName: "AWS (EC2 & S3)" },
+      { name: "GCP (Google Cloud)", iconName: "GCP (Google Cloud)" },
+      { name: "Linux", iconName: "Linux" },
+      { name: "Vercel", logo: vercelLogo },
+      { name: "Render", iconName: "Render" },
+      { name: "Netlify", logo: netlifyLogo },
       { name: "Git", logo: gitLogo },
       { name: "GitHub", logo: githubLogo },
-      { name: "VS Code", logo: vscodeLogo },
+      { name: "Requestly API Client", iconName: "Requestly API Client" },
       { name: "Postman", logo: postmanLogo },
-      { name: "Compass", logo: mcLogo },
-      { name: "Netlify", logo: netlifyLogo },
+      { name: "VS Code", logo: vscodeLogo },
       { name: "Figma", logo: figmaLogo },
-      { name: "Latex", logo: latexLogo },
     ],
   },
 ];
